@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* ============================================
+       Landing Builder — "Stealth" identity
+       Almost-black canvas, silent blue glow,
+       sharp 0px corners, Rajdhani display
+       ============================================ */
+
+    /* Brand (action) — silent blue glow */
+    --color-brand-50: #0c1524;
+    --color-brand-100: #101d33;
+    --color-brand-200: #16263f;
+    --color-brand-300: #1e3352;
+    --color-brand-400: #2c4a75;
+    --color-brand-500: #3b82f6;
+    --color-brand-600: #4f8ef7;
+    --color-brand-700: #7aa9f9;
+    --color-brand-800: #a9c8fc;
+    --color-brand-900: #d8e8fe;
+
+    /* Primary — blue glow (actions, links, brand) */
+    --color-primary-50: #0c1524;
+    --color-primary-100: #101d33;
+    --color-primary-200: #16263f;
+    --color-primary-300: #1e3352;
+    --color-primary-400: #2c4a75;
+    --color-primary-500: #3b82f6;
+    --color-primary-600: #4f8ef7;
+    --color-primary-700: #7aa9f9;
+    --color-primary-800: #a9c8fc;
+    --color-primary-900: #d8e8fe;
+
+    /* Accent — cooler steel-blue highlight */
+    --color-accent-50: #0b1a22;
+    --color-accent-100: #10232e;
+    --color-accent-200: #16303f;
+    --color-accent-300: #1e4257;
+    --color-accent-400: #2d5d7a;
+    --color-accent-500: #3fa7d6;
+    --color-accent-600: #5cb8e0;
+    --color-accent-700: #86cbe9;
+    --color-accent-800: #b4e0f3;
+    --color-accent-900: #dff2fb;
+
+    /* Secondary — near-black steel neutrals (high numbers = lighter) */
+    --color-secondary-50: #050505;
+    --color-secondary-100: #0f0f0f;
+    --color-secondary-200: #1c1c1c;
+    --color-secondary-300: #262626;
+    --color-secondary-400: #3a3a3a;
+    --color-secondary-500: #8a8a8a;
+    --color-secondary-600: #9d9d9d;
+    --color-secondary-700: #b5b5b5;
+    --color-secondary-800: #d4d4d4;
+    --color-secondary-900: #e8e8e8;
+    --color-secondary-950: #f5f5f5;
+
+    /* Surface — canvas layers */
+    --color-surface-50: #070707;
+    --color-surface-100: #0b0b0b;
+    --color-surface-200: #121212;
+    --color-surface-300: #1a1a1a;
+    --color-surface-400: #242424;
+    --color-surface-500: #333333;
+    --color-surface-600: #4a4a4a;
+    --color-surface-700: #6b6b6b;
+    --color-surface-800: #8f8f8f;
+    --color-surface-900: #b8b8b8;
+    --color-surface-950: #e0e0e0;
+
+    /* Ink — text on glow buttons */
+    --color-ink: #0d0d0d;
+
+    /* Semantic */
+    --color-success-50: #052e1c;
+    --color-success-500: #22c55e;
+    --color-success-600: #4ade80;
+    --color-warning-50: #33260a;
+    --color-warning-500: #f59e0b;
+    --color-danger-50: #3d0f0f;
+    --color-danger-500: #ef4444;
+    --color-danger-600: #f87171;
+
+    /* Typography */
+    --font-heading: 'Rajdhani', 'Segoe UI', sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  .dark {
+    /* Deeper stealth — pure black canvas */
+    --color-brand-50: #080d16;
+    --color-brand-100: #0c1422;
+    --color-brand-200: #93bdfb;
+    --color-brand-300: #6ea4f8;
+    --color-brand-400: #27406b;
+    --color-brand-500: #3b82f6;
+    --color-brand-600: #4f8ef7;
+    --color-brand-700: #7aa9f9;
+    --color-brand-800: #a9c8fc;
+    --color-brand-900: #0d1524;
+
+    --color-primary-50: #080d16;
+    --color-primary-100: #0c1422;
+    --color-primary-200: #93bdfb;
+    --color-primary-300: #6ea4f8;
+    --color-primary-400: #27406b;
+    --color-primary-500: #3b82f6;
+    --color-primary-600: #4f8ef7;
+    --color-primary-700: #7aa9f9;
+    --color-primary-800: #a9c8fc;
+    --color-primary-900: #0d1524;
+
+    --color-accent-50: #071318;
+    --color-accent-100: #0b1c23;
+    --color-accent-200: #8fd6f0;
+    --color-accent-300: #6cc4e8;
+    --color-accent-400: #1f4252;
+    --color-accent-500: #3fa7d6;
+    --color-accent-600: #5cb8e0;
+    --color-accent-700: #86cbe9;
+    --color-accent-800: #b4e0f3;
+    --color-accent-900: #0f2630;
+
+    --color-secondary-50: #000000;
+    --color-secondary-100: #0a0a0a;
+    --color-secondary-200: #141414;
+    --color-secondary-300: #1c1c1c;
+    --color-secondary-400: #2e2e2e;
+    --color-secondary-500: #7a7a7a;
+    --color-secondary-600: #8f8f8f;
+    --color-secondary-700: #a6a6a6;
+    --color-secondary-800: #c2c2c2;
+    --color-secondary-900: #dcdcdc;
+    --color-secondary-950: #efefef;
+
+    --color-surface-50: #030303;
+    --color-surface-100: #070707;
+    --color-surface-200: #0d0d0d;
+    --color-surface-300: #141414;
+    --color-surface-400: #1d1d1d;
+    --color-surface-500: #2b2b2b;
+    --color-surface-600: #414141;
+    --color-surface-700: #5f5f5f;
+    --color-surface-800: #828282;
+    --color-surface-900: #ababab;
+    --color-surface-950: #d4d4d4;
+
+    --color-success-50: #04241a;
+    --color-success-500: #22c55e;
+    --color-success-600: #4ade80;
+    --color-warning-50: #2b2108;
+    --color-warning-500: #f59e0b;
+    --color-danger-50: #330c0c;
+    --color-danger-500: #ef4444;
+    --color-danger-600: #f87171;
+  }
+}
