@@ -3,9 +3,9 @@ import {
   Get,
   Post,
   Patch,
-  Delete,
   Body,
   Param,
+  Query,
   UseGuards,
   Request,
 } from '@nestjs/common';
@@ -27,42 +27,6 @@ export class ProjectsController {
     return this.projectsService.findAll(req.user.id);
   }
 
-  @Get(':id')
-  @ApiOperation({ summary: 'Get a single project with pages' })
-  async findOne(@Param('id') id: string, @Request() req: any) {
-    return this.projectsService.findOne(id, req.user.id);
-  }
-
-  @Post()
-  @ApiOperation({ summary: 'Create a new project with default page' })
-  async create(@Body() dto: CreateProjectDto, @Request() req: any) {
-    return this.projectsService.create(dto, req.user.id);
-  }
-
-  @Patch(':id')
-  @ApiOperation({ summary: 'Update project details' })
-  async update(@Param('id') id: string, @Body() dto: UpdateProjectDto, @Request() req: any) {
-    return this.projectsService.update(id, dto, req.user.id);
-  }
-
-  @Delete(':id')
-  @ApiOperation({ summary: 'Soft-delete a project' })
-  async delete(@Param('id') id: string, @Request() req: any) {
-    return this.projectsService.softDelete(id, req.user.id);
-  }
-
-  @Patch(':id/restore')
-  @ApiOperation({ summary: 'Restore a soft-deleted project' })
-  async restore(@Param('id') id: string, @Request() req: any) {
-    return this.projectsService.restore(id, req.user.id);
-  }
-
-  @Get(':id/pages')
-  @ApiOperation({ summary: 'Get all pages for a project' })
-  async getPages(@Param('id') id: string, @Request() req: any) {
-    return this.projectsService.getPages(id, req.user.id);
-  }
-
   @Get('export')
   @ApiOperation({ summary: 'Export projects as CSV' })
   async exportCsv(@Request() req: any) {
@@ -71,5 +35,26 @@ export class ProjectsController {
     res.setHeader('Content-Type', 'text/csv; charset=utf-8');
     res.setHeader('Content-Disposition', `attachment; filename="${result.filename}"`);
     res.send(result.csv);
+  }
+
+  @Get(':id')
+  findOne(@Param('id') id: string, @Request() req: any) {
+    return this.projectsService.findOne(id, req.user.id);
+  }
+
+  @Post()
+  create(@Body() dto: any, @Request() req: any) {
+    return this.projectsService.create(req.user.id, dto);
+  }
+
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() dto: any, @Request() req: any) {
+    return this.projectsService.update(id, req.user.id, dto);
+  }
+
+  @Get(':id/pages')
+  @ApiOperation({ summary: 'Get all pages for a project' })
+  async getPages(@Param('id') id: string, @Request() req: any) {
+    return this.projectsService.getPages(id, req.user.id);
   }
 }
